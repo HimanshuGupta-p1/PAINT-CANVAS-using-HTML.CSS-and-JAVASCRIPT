@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="paint_canvas.css">
+
+</head>
+<body>
+<h1 style="font-size:50px;">
+    <span class="multicolortext"> PAINT YOUR OWN PICTURE</span>&#128512
+</h1>
+<p>
+    <b style="color:rgb(92, 252, 0); background-color: ;">Set Width</b>
+    <input type="text" onchange="setWidth(this.value)" />
+    <b style="color:cyan;">Set Height</b>
+    <input type="text" onchange="setHeight(this.value)"/>
+</p>
+<canvas id="canvas1" onmouseup="endPaint()" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX,event.offsetY)"></canvas>
+<p>
+    <b style="font-size: 30px; color: darkgreen;">Brush Color </b>
+    <input type="color" value="#000" onchange="setColor(this.value)"/>
+      <b style="color:rgb(255, 0, 0); font-size: 30px;">Brush Size 	&#128396</b>
+    <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="resizeBrush(this.value)"/>
+    <output id="sizeOutput">50</output>
+</p>
+<p>
+    <input type="button" id="clear" value="Clear Canvas" onclick="clearCanvas()"/>
+</p>
+<script src="paint_canvas.js"></script>
+</body>
+</html>
